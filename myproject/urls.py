@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myapp import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/finances/transactions/', views.FinanzaListCreate.as_view(), name='finanza-list-create'),
+    path('api/finances/transactions/<int:pk>/', views.FinanzaDetail.as_view(), name='finanza-detail'),
+    path('api/finances/reports/', views.FinanceReport.as_view(), name='finance-report'),
 ]
