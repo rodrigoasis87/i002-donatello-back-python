@@ -1,5 +1,5 @@
 # Etapa 1: Construcción de la aplicación
-FROM python:3.9-slim AS builder
+FROM python:3.10-slim AS builder
 WORKDIR /app
 
 # Copia y establece las dependencias del proyecto
@@ -12,7 +12,7 @@ WORKDIR /app
 COPY . .
 
 # Etapa 3: Servidor de producción
-FROM python:3.9-slim AS production
+FROM python:3.10-slim AS production
 WORKDIR /app
 
 # Copia los archivos del build anterior
