@@ -22,4 +22,4 @@ COPY --from=setup /app /app
 # ENV DJANGO_SETTINGS_MODULE=nombre_de_tu_app.settings.prod
 
 # Configura la ejecución de la aplicación
-CMD ["python", "manage.py", "runserver"]
+CMD ["python3", "manage.py", "runserver"]
