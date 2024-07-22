@@ -20,6 +20,7 @@ COPY --from=setup /app /app
 
 # Configura variables de entorno
 # ENV DJANGO_SETTINGS_MODULE=nombre_de_tu_app.settings.prod
+#ENV PYTHONPATH=/path/to/your/python/modules
 
 # Configura la ejecución de la aplicación
 CMD ["python3", "manage.py", "runserver"]
