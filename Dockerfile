@@ -5,6 +5,7 @@ WORKDIR /app
 # Copia y establece las dependencias del proyecto
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+RUN which django-admin
 
 # Etapa 2: Configuración de la aplicación
 FROM builder AS setup
