@@ -1,11 +1,12 @@
 # Etapa 1: Construcción de la aplicación
 FROM python:3.10-slim AS builder
 WORKDIR /app
+RUN apt-get update
+RUN pip install --upgrade pip
 
 # Copia y establece las dependencias del proyecto
-COPY requirements.txt .
+COPY /requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
-RUN which django-admin
 
 # Etapa 2: Configuración de la aplicación
 FROM builder AS setup
