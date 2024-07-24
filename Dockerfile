@@ -2,12 +2,13 @@
 FROM python:3.10-slim AS builder
 WORKDIR /app
 
-# Envs
-ENV PYTHONUNBUFFERED 1
-ENV PYTHONDONTWRITEBYTECODE 1
-
-# Install system dependencies
-RUN apt-get update
+# Actualiza pip e instala las dependencias del sistema
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        gcc \
+        python3-dev \
+        libpq-dev && \
+    pip install --upgrade pip
 
 # Copia y establece las dependencias del proyecto
 RUN pip install --upgrade pip
@@ -28,7 +29,9 @@ COPY --from=setup /app /app
 
 # Configura variables de entorno
 # ENV DJANGO_SETTINGS_MODULE=nombre_de_tu_app.settings.prod
-ENV PYTHONPATH /usr/local/bin/django-admin
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
+# ENV PYTHONPATH /usr/local/bin/django-admin
 
 # Configura la ejecución de la aplicación
 CMD ["python3", "manage.py", "runserver"]
