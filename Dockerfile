@@ -2,14 +2,15 @@
 FROM python:3.10-slim AS builder
 WORKDIR /app
 
-# Env
+# Envs
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
+# Install system dependencies
 RUN apt-get update
-RUN pip install --upgrade pip
 
 # Copia y establece las dependencias del proyecto
+RUN pip install --upgrade pip
 COPY /requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
