@@ -1,6 +1,11 @@
 # Etapa 1: Construcción de la aplicación
 FROM python:3.10-slim AS builder
 WORKDIR /app
+
+# Env
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
+
 RUN apt-get update
 RUN pip install --upgrade pip
 
