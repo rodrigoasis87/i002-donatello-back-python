@@ -6,4 +6,5 @@ urlpatterns = [
     path('finances/transactions/<int:pk>/', views.FinanzaDetail.as_view(), name='finanza-detail'),
     path('finances/reports/', views.FinanceReport.as_view(), name='finance-report'),
     path('finances/ingreso-total/', views.IngresoTotal.as_view(), name='ingreso-total'),
+    path('finances/create/', views.FinanzaCreateView.as_view(), name='finanza-create'),
 ]
