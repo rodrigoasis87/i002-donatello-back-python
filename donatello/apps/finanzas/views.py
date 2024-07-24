@@ -101,7 +101,6 @@ class FinanceReport(APIView):
 class FinanzaCreateView(APIView):
     def post(self, request, format=None):
         serializer = FinanzaSerializer(data=request.data)
-        print("AA", request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
