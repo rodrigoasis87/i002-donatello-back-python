@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'donatello_python_db',
         'USER': 'donatello_python_db_user',
         'PASSWORD': 'Nn16Us6VseYzvLZpFcwXty2h38u0UJGT',
-        'HOST': 'dpg-cqfamlogph6c73bb3vu0-a/donatello_python_db',
+        'HOST': 'dpg-cqfamlogph6c73bb3vu0-a',
         'PORT': '5432',
     }
 }
