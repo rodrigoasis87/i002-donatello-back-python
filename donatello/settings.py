@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'donatello.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default='mydatabase'),
-        'USER': config('DB_USER', default='myuser'),
-        'PASSWORD': config('DB_PASSWORD', default='mypassword'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='5432'),
+        'NAME': 'donatello_python_db',
+        'USER': 'donatello_python_db_user',
+        'PASSWORD': 'Nn16Us6VseYzvLZpFcwXty2h38u0UJGT',
+        'HOST': 'dpg-cqfamlogph6c73bb3vu0-a/donatello_python_db',
+        'PORT': '5432',
     }
 }
 
