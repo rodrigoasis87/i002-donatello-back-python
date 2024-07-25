@@ -15,15 +15,30 @@ from django.utils import timezone
 
 
 class FinanzaListCreate(generics.ListCreateAPIView):
+    serializer_class = FinanzaSerializer
+    def get_queryset(self):
+        id_usuario = self.kwargs['id_usuario']
+        return Finanza.objects.filter(id_usuario=id_usuario)
+
+class FinanzaDetail(generics.RetrieveAPIView):
     queryset = Finanza.objects.all()
     serializer_class = FinanzaSerializer
 
-class FinanzaDetail(generics.RetrieveUpdateDestroyAPIView):
+class FinanzaCreate(generics.CreateAPIView):
     queryset = Finanza.objects.all()
     serializer_class = FinanzaSerializer
+
+class FinanzaUpdate(generics.UpdateAPIView):
+    queryset = Finanza.objects.all()
+    serializer_class = FinanzaSerializer 
+
+class FinanzaDelete(generics.DestroyAPIView):
+    queryset = Finanza.objects.all()
+    serializer_class = FinanzaSerializer
+    
 
 class IngresoTotal(APIView):
-    def get(self, request):
+    def get(self, request, id_usuario):
         try:
             today = timezone.now().date()
             # Calcular fechas
@@ -33,13 +48,13 @@ class IngresoTotal(APIView):
             # Calcular total de ingresos en la semana
             total_ingresos_semana = Finanza.objects.filter(
                 fecha__range=[inicio_semana, today], 
-                tipo='income'
+                tipo='income', id_usuario=id_usuario
             ).aggregate(total=Sum('monto'))['total'] or 0
             
             # Calcular total de ingresos en el mes
             total_ingresos_mes = Finanza.objects.filter(
                 fecha__range=[inicio_mes, today], 
-                tipo='income'
+                tipo='income', id_usuario=id_usuario
             ).aggregate(total=Sum('monto'))['total'] or 0
 
             # Preparar respuesta
