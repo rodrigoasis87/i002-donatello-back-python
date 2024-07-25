@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from django.db.models import F
 from django.db.models import Sum
 from django.http import JsonResponse
+from rest_framework import status
 
 from donatello.apps.finanzas.serializer import FinanzaSerializer
 
@@ -21,10 +22,6 @@ class FinanzaListCreate(generics.ListCreateAPIView):
         return Finanza.objects.filter(id_usuario=id_usuario)
 
 class FinanzaDetail(generics.RetrieveAPIView):
-    queryset = Finanza.objects.all()
-    serializer_class = FinanzaSerializer
-
-class FinanzaCreate(generics.CreateAPIView):
     queryset = Finanza.objects.all()
     serializer_class = FinanzaSerializer
 
@@ -110,3 +107,12 @@ class FinanceReport(APIView):
             return JsonResponse(report_data)
         except Exception as e:
            return JsonResponse({'error': str(e)}, status=500)
+        
+
+class FinanzaCreateView(APIView):
+    def post(self, request, format=None):
+        serializer = FinanzaSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
