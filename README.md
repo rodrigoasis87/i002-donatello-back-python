@@ -92,8 +92,6 @@ Inspirado en el personaje de las Tortugas Ninja, simboliza innovación tecnológ
 
 ### 1. Clonate el repositorio
 
-Clona el repositorio de GitHub en tu máquina local usando el siguiente comando:
-
 `git clone https://github.com/tu-usuario/tu-repositorio.git`  
 `cd tu-repositorio`
 
