@@ -80,7 +80,7 @@ Inspirado en el personaje de las Tortugas Ninja, simboliza innovación tecnológ
 - `Adrián` https://www.linkedin.com/in/adriánramos/
 
 ## Para desplegar en local:
-## Requisitos Previos
+### Requisitos Previos
 
 - [Python](https://www.python.org/downloads/) 3.10 o superior
 - [Git](https://git-scm.com/)
