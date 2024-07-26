@@ -94,14 +94,14 @@ Inspirado en el personaje de las Tortugas Ninja, simboliza innovación tecnológ
 
 Clona el repositorio de GitHub en tu máquina local usando el siguiente comando:
 
-`git clone https://github.com/tu-usuario/tu-repositorio.git`
+`git clone https://github.com/tu-usuario/tu-repositorio.git`  
 `cd tu-repositorio`
 
 ### 2. Configurate el entorno virtual
 
-`python3 -m venv venv`
-`source venv/bin/activate  # En Linux/macOS`
-`# venv\Scripts\activate  # En Windows`
+`python3 -m venv venv`  
+`source venv/bin/activate  # En Linux/macOS`  
+`# venv\Scripts\activate  # En Windows`  
 
 ### 3. Instalar las dependencias
 
@@ -109,12 +109,12 @@ Clona el repositorio de GitHub en tu máquina local usando el siguiente comando:
 
 ### 4. Configurar la base de datos de Postgre
 
-```CREATE DATABASE donatello_db;`
-CREATE USER donatello_user WITH PASSWORD 'password';
-ALTER ROLE donatello_user SET client_encoding TO 'utf8';
-ALTER ROLE donatello_user SET default_transaction_isolation TO 'read committed';
-ALTER ROLE donatello_user SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE donatello_db TO donatello_user;```
+`CREATE DATABASE donatello_db;`  
+`CREATE USER donatello_user WITH PASSWORD 'password';`  
+`ALTER ROLE donatello_user SET client_encoding TO 'utf8';`  
+`ALTER ROLE donatello_user SET default_transaction_isolation TO 'read committed';`  
+`ALTER ROLE donatello_user SET timezone TO 'UTC';`  
+`GRANT ALL PRIVILEGES ON DATABASE donatello_db TO donatello_user;`
 
 ### (no te olvides de configurar el archivo settings.py)
 
@@ -122,25 +122,25 @@ GRANT ALL PRIVILEGES ON DATABASE donatello_db TO donatello_user;```
    `'default': {`  
         `'ENGINE': 'django.db.backends.postgresql',`  
         `'NAME': 'donatello_db',`  
-        'USER': 'donatello_user',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+        `'USER': 'donatello_user',`  
+        `'PASSWORD': 'password',`  
+        `'HOST': 'localhost',`  
+        `'PORT': '5432',`  
+    `}`  
+`}`  
 
 ### 5. Realiza las migraciones de la base de datos
 
-python manage.py makemigrations
-python manage.py migrate
+`python manage.py makemigrations`  
+`python manage.py migrate`  
 
 ### 6. Crea un superusuario
 
-python manage.py createsuperuser
+`python manage.py createsuperuser`  
 
 ### 7. ¡Y a correr!
 
-python manage.py runserver
+`python manage.py runserver```
 
 
 
