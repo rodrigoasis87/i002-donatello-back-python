@@ -94,7 +94,6 @@ Inspirado en el personaje de las Tortugas Ninja, simboliza innovación tecnológ
 
 Clona el repositorio de GitHub en tu máquina local usando el siguiente comando:
 
-```bash
 git clone https://github.com/tu-usuario/tu-repositorio.git
 cd tu-repositorio
 
@@ -102,7 +101,7 @@ cd tu-repositorio
 
 python3 -m venv venv
 source venv/bin/activate  # En Linux/macOS
-# venv\Scripts\activate  # En Windows
+venv\Scripts\activate  # En Windows
 
 ### 3. Instalar las dependencias
 
@@ -117,7 +116,7 @@ ALTER ROLE donatello_user SET default_transaction_isolation TO 'read committed';
 ALTER ROLE donatello_user SET timezone TO 'UTC';
 GRANT ALL PRIVILEGES ON DATABASE donatello_db TO donatello_user;
 
-## (no te olvides de configurar el archivo settings.py)
+### (no te olvides de configurar el archivo settings.py)
 
 DATABASES = {
     'default': {
