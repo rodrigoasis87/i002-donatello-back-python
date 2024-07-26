@@ -41,7 +41,7 @@ Inspirado en el personaje de las Tortugas Ninja, simboliza innovación tecnológ
 ### Backend Java (API principal)
 - **Despliegue**:  https://i002-donatello-back-java-latest-z9hn.onrender.com/
 - **Repositorio**: https://github.com/igrowker/i002-donatello-back-java
-- **Tecnologías**: Java 17, Springboot 3, PostrgreSQL, Json Web Token, Swagger, Docker, Github Actions etcs.   `Revisar!!`
+- **Tecnologías**: Java 17, Springboot 3, PostrgreSQL, Json Web Token, Swagger, Docker, Github Actions etcs. 
 - **Endpoints**: `Swagger:` https://i002-donatello-back-java-latest-z9hn.onrender.com/api/docs barra algo mas... `Revisar!!`   
 
 ## Funcionalidades
