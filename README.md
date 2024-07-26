@@ -140,7 +140,7 @@ Clona el repositorio de GitHub en tu máquina local usando el siguiente comando:
 
 ### 7. ¡Y a correr!
 
-`python manage.py runserver```
+`python manage.py runserver`
 
 
 
