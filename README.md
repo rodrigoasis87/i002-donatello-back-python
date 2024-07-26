@@ -118,16 +118,16 @@ GRANT ALL PRIVILEGES ON DATABASE donatello_db TO donatello_user;```
 
 ### (no te olvides de configurar el archivo settings.py)
 
-```DATABASES = {`
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'donatello_db',
+`DATABASES = {`  
+   `'default': {`  
+        `'ENGINE': 'django.db.backends.postgresql',`  
+        `'NAME': 'donatello_db',`  
         'USER': 'donatello_user',
         'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}```
+}
 
 ### 5. Realiza las migraciones de la base de datos
 
