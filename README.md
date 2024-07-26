@@ -109,16 +109,16 @@ Clona el repositorio de GitHub en tu máquina local usando el siguiente comando:
 
 ### 4. Configurar la base de datos de Postgre
 
-`CREATE DATABASE donatello_db;`
-`CREATE USER donatello_user WITH PASSWORD 'password';`
-`ALTER ROLE donatello_user SET client_encoding TO 'utf8';`
-`ALTER ROLE donatello_user SET default_transaction_isolation TO 'read committed';`
-`ALTER ROLE donatello_user SET timezone TO 'UTC';`
-`GRANT ALL PRIVILEGES ON DATABASE donatello_db TO donatello_user;`
+```CREATE DATABASE donatello_db;`
+CREATE USER donatello_user WITH PASSWORD 'password';
+ALTER ROLE donatello_user SET client_encoding TO 'utf8';
+ALTER ROLE donatello_user SET default_transaction_isolation TO 'read committed';
+ALTER ROLE donatello_user SET timezone TO 'UTC';
+GRANT ALL PRIVILEGES ON DATABASE donatello_db TO donatello_user;```
 
 ### (no te olvides de configurar el archivo settings.py)
 
-`DATABASES = {
+```DATABASES = {`
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'donatello_db',
@@ -127,7 +127,7 @@ Clona el repositorio de GitHub en tu máquina local usando el siguiente comando:
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}`
+}```
 
 ### 5. Realiza las migraciones de la base de datos
 
