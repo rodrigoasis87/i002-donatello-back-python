@@ -94,13 +94,14 @@ Inspirado en el personaje de las Tortugas Ninja, simboliza innovación tecnológ
 
     git clone https://github.com/tu-usuario/tu-repositorio.git  
 
-
     cd tu-repositorio
 
 ### 2. Configurate el entorno virtual
 
     python3 -m venv venv`  
+    
     source venv/bin/activate  # En Linux/macOS  
+    
     # venv\Scripts\activate  # En Windows  
 
 ### 3. Instalar las dependencias
@@ -110,10 +111,15 @@ Inspirado en el personaje de las Tortugas Ninja, simboliza innovación tecnológ
 ### 4. Configurar la base de datos de Postgre
 
     CREATE DATABASE donatello_db;  
+    
     CREATE USER donatello_user WITH PASSWORD 'password';  
+    
     ALTER ROLE donatello_user SET client_encoding TO 'utf8';  
+    
     ALTER ROLE donatello_user SET default_transaction_isolation TO 'read committed';  
+    
     ALTER ROLE donatello_user SET timezone TO 'UTC';  
+    
     GRANT ALL PRIVILEGES ON DATABASE donatello_db TO donatello_user;
 
 ### (no te olvides de configurar el archivo settings.py)
@@ -132,6 +138,7 @@ Inspirado en el personaje de las Tortugas Ninja, simboliza innovación tecnológ
 ### 5. Realiza las migraciones de la base de datos
 
     python manage.py makemigrations  
+    
     python manage.py migrate  
 
 ### 6. Crea un superusuario
